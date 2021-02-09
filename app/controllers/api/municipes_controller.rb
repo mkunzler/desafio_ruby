@@ -1,9 +1,9 @@
-class MunicipesController < ApplicationController
+class Api::MunicipesController < ApplicationController
   before_action :set_municipe, only: [:show, :update, :destroy]
 
   # GET /municipes
   def index
-    @municipes = Municipe.all
+    @municipes = Municipe.all.get_nome
 
     render json: @municipes
   end
